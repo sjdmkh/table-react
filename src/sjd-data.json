@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "fullName": "Habib Habibi",
+    "address": "Mashhad X Ave",
+    "phoneNumber": "+989023456789",
+    "email": "Habib@yahoo.com"
+  },
+  {
+    "id": 2,
+    "fullName": "Hamid Habibi",
+    "address": "Mashhad Y Ave",
+    "phoneNumber": "+989023456789",
+    "email": "Hamid@yahoo.com"
+  },
+  {
+    "id": 3,
+    "fullName": "Saeed Habibi",
+    "address": "Mashhad Z Ave",
+    "phoneNumber": "+989023456789",
+    "email": "Saeed@yahoo.com"
+  },
+  {
+    "id": 4,
+    "fullName": "Vahid Habibi",
+    "address": "Mashhad W Ave",
+    "phoneNumber": "+989023456789",
+    "email": "Vahid@yahoo.com"
+  },
+  {
+    "id": 5,
+    "fullName": "Jamshid Habibi",
+    "address": "Mashhad R Ave",
+    "phoneNumber": "+989023456789",
+    "email": "Jamshid@yahoo.com"
+  }
+]

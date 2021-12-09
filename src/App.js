@@ -28,7 +28,7 @@ function App() {
         const fieldName = event.target.getAttribute("name");
         const fieldValue = event.target.value;
 
-        const newFormData = { ...addFormData};
+        const newFormData = { ...addFormData };
         newFormData[fieldName] = fieldValue;
 
         setAddFormData(newFormData);
@@ -40,10 +40,10 @@ function App() {
         const fieldName = event.target.getAttribute("name");
         const fieldValue = event.target.value;
 
-        const newFormData = {...editFormData};
-        newFormData[fieldName]=[fieldValue]
+        const newFormData = { ...editFormData };
+        newFormData[fieldName]= fieldValue;
 
-        setEditFormData()
+        setEditFormData(newFormData);
     }
 
     const handleAddFormSubmit = (event) => {
@@ -68,6 +68,7 @@ function App() {
             id: editContactId,
             fullName: editFormData.fullName,
             address: editFormData.address,
+            phoneNumber: editFormData.phoneNumber,
             email: editFormData.email,
         };
 
@@ -76,6 +77,7 @@ function App() {
         const index = contacts.findIndex((contact)=> contact.id === editContactId);
         newContacts[index] = editedContact;
         setContacts(newContacts);
+        setEditContactId(null);
     };
 
     const handleEditClick = (event, contact) => {
@@ -122,7 +124,7 @@ function App() {
                     {contacts.map((contact) => (
                         <Fragment>
                             {editContactId === contact.id ?
-                                (<EditableRow editFormData={editFormData} handleEditFormChange={handleAddFormChange} handleCancelClick={handleCancelClick}/>) :
+                                (<EditableRow editFormData={editFormData} handleEditFormChange={handleEditFormChange} handleCancelClick={handleCancelClick}/>) :
                                 (<ReadOnlyRow contact={contact} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}/>)}
                         </Fragment>
                     ))}

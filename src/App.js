@@ -1,5 +1,5 @@
 import React, {useState, Fragment} from "react";
-import {nanoid} from 'nanoid'
+import {nanoid} from 'nanoid';
 import './App.css';
 import data from "./sjd-data.json"
 import ReadOnlyRow from "./components/ReadOnlyRow";
@@ -8,27 +8,27 @@ import EditableRow from "./components/EditableRow";
 function App() {
     const [contacts, setContacts] = useState(data)
     const [addFormData, setAddFormData] = useState({
-        fullName: '',
-        address: '',
-        phoneNumber: '',
-        email: '',
+        fullName: "",
+        address: "",
+        phoneNumber: "",
+        email: "",
     });
 
     const [editFormData, setEditFormData] = useState({
-        fullName: '',
-        address: '',
-        phoneNumber: '',
-        email: '',
+        fullName: "",
+        address: "",
+        phoneNumber: "",
+        email: "",
     });
 
     const [editContactId, setEditContactId] = useState(null);
 
     const handleAddFormChange = (event) => {
         event.preventDefault();
-        const fieldName = event.target.getAttribute('name');
-        const fieldValue = event.target.Value;
+        const fieldName = event.target.getAttribute("name");
+        const fieldValue = event.target.value;
 
-        const newFormData = {...addFormData};
+        const newFormData = { ...addFormData};
         newFormData[fieldName] = fieldValue;
 
         setAddFormData(newFormData);
@@ -38,7 +38,7 @@ function App() {
         event.preventDefault();
 
         const fieldName = event.target.getAttribute("name");
-        const fieldValue = event.target.Value;
+        const fieldValue = event.target.value;
 
         const newFormData = {...editFormData};
         newFormData[fieldName]=[fieldValue]
@@ -76,7 +76,7 @@ function App() {
         const index = contacts.findIndex((contact)=> contact.id === editContactId);
         newContacts[index] = editedContact;
         setContacts(newContacts);
-    }
+    };
 
     const handleEditClick = (event, contact) => {
         event.preventDefault();
@@ -156,7 +156,7 @@ function App() {
                        placeholder="Enter a email..."
                        onChange={handleAddFormChange}
                 />
-                <button type="submit"> Add</button>
+                <button type="submit"> Add </button>
             </form>
         </div>
     );
